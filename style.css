@@ -189,18 +189,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--white);
   flex-shrink: 0;
 }
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  background: var(--gold);
-  color: var(--navy-dark);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .875rem;
-  font-weight: 900;
-  letter-spacing: .05em;
+.logo-icon {
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
 }
 .logo-text {

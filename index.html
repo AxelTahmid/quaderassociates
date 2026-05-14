@@ -16,7 +16,33 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <div class="logo-mark">QA</div>
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <clipPath id="cln"><circle cx="22" cy="22" r="18.5"/></clipPath>
+            <marker id="arn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M0 1.5L9 5L0 8.5Z" fill="#c8a951"/>
+            </marker>
+          </defs>
+          <!-- outer glow ring -->
+          <circle cx="22" cy="22" r="21.5" stroke="#c8a951" stroke-width="0.6" fill="none" opacity="0.3"/>
+          <!-- globe fill -->
+          <circle cx="22" cy="22" r="19.5" fill="#0a1f45"/>
+          <!-- globe grid lines -->
+          <g clip-path="url(#cln)" opacity="0.38">
+            <line x1="2" y1="22" x2="42" y2="22" stroke="#c8a951" stroke-width="0.8"/>
+            <line x1="22" y1="2" x2="22" y2="42" stroke="#c8a951" stroke-width="0.8"/>
+            <ellipse cx="22" cy="22" rx="18.5" ry="6" stroke="#c8a951" stroke-width="0.8" fill="none"/>
+            <ellipse cx="22" cy="14.5" rx="13" ry="4.5" stroke="#c8a951" stroke-width="0.7" fill="none" opacity="0.75"/>
+            <ellipse cx="22" cy="29.5" rx="13" ry="4.5" stroke="#c8a951" stroke-width="0.7" fill="none" opacity="0.75"/>
+            <ellipse cx="22" cy="22" rx="10" ry="18.5" stroke="#c8a951" stroke-width="0.8" fill="none"/>
+          </g>
+          <!-- gold border ring -->
+          <circle cx="22" cy="22" r="19.5" stroke="#c8a951" stroke-width="1.5" fill="none"/>
+          <!-- flight path arc: BD (lower-left) → Gulf/Asia (upper-right) -->
+          <path d="M10.5 33Q16 8 34 10.5" stroke="#c8a951" stroke-width="2.2" stroke-linecap="round" fill="none" marker-end="url(#arn)"/>
+          <!-- origin dot (Dhaka) -->
+          <circle cx="10.5" cy="33" r="2.8" fill="#c8a951"/>
+        </svg>
         <div class="logo-text">
           <span class="logo-name">Quader Associates</span>
           <span class="logo-tagline" data-en="Licensed Recruitment Agency" data-bn="লাইসেন্সপ্রাপ্ত রিক্রুটমেন্ট এজেন্সি">Licensed Recruitment Agency</span>
@@ -436,7 +462,27 @@
     <div class="container footer-top">
       <div class="footer-brand">
         <div class="logo footer-logo">
-          <div class="logo-mark">QA</div>
+          <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <clipPath id="clf"><circle cx="22" cy="22" r="18.5"/></clipPath>
+              <marker id="arf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#c8a951"/>
+              </marker>
+            </defs>
+            <circle cx="22" cy="22" r="21.5" stroke="#c8a951" stroke-width="0.6" fill="none" opacity="0.3"/>
+            <circle cx="22" cy="22" r="19.5" fill="#0a1f45"/>
+            <g clip-path="url(#clf)" opacity="0.38">
+              <line x1="2" y1="22" x2="42" y2="22" stroke="#c8a951" stroke-width="0.8"/>
+              <line x1="22" y1="2" x2="22" y2="42" stroke="#c8a951" stroke-width="0.8"/>
+              <ellipse cx="22" cy="22" rx="18.5" ry="6" stroke="#c8a951" stroke-width="0.8" fill="none"/>
+              <ellipse cx="22" cy="14.5" rx="13" ry="4.5" stroke="#c8a951" stroke-width="0.7" fill="none" opacity="0.75"/>
+              <ellipse cx="22" cy="29.5" rx="13" ry="4.5" stroke="#c8a951" stroke-width="0.7" fill="none" opacity="0.75"/>
+              <ellipse cx="22" cy="22" rx="10" ry="18.5" stroke="#c8a951" stroke-width="0.8" fill="none"/>
+            </g>
+            <circle cx="22" cy="22" r="19.5" stroke="#c8a951" stroke-width="1.5" fill="none"/>
+            <path d="M10.5 33Q16 8 34 10.5" stroke="#c8a951" stroke-width="2.2" stroke-linecap="round" fill="none" marker-end="url(#arf)"/>
+            <circle cx="10.5" cy="33" r="2.8" fill="#c8a951"/>
+          </svg>
           <div class="logo-text">
             <span class="logo-name">Quader Associates</span>
             <span class="logo-tagline">Lic. No. 1379 · BAIRA Member</span>
