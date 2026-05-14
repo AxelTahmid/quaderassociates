@@ -64,6 +64,18 @@
   }, { passive: true });
 
 
+  /* ── Scroll Progress Bar ── */
+  var progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.prepend(progressBar);
+
+  window.addEventListener('scroll', function () {
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    progressBar.style.transform = 'scaleX(' + pct + ')';
+  }, { passive: true });
+
+
   /* ── Mobile Menu ── */
   var hamburger = document.getElementById('hamburger');
   var navLinks  = document.getElementById('navLinks');
@@ -104,6 +116,8 @@
       if (start >= target) {
         start = target;
         clearInterval(timer);
+        var statEl = el.closest('.stat');
+        if (statEl) statEl.classList.add('done');
       }
       el.textContent = start.toLocaleString();
     }, 16);

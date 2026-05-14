@@ -1080,3 +1080,145 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .fade-up:nth-child(4) { transition-delay: .3s; }
 .fade-up:nth-child(5) { transition-delay: .4s; }
 .fade-up:nth-child(6) { transition-delay: .5s; }
+
+/* =============================================
+   MICRO-ANIMATIONS
+   ============================================= */
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 2001;
+  pointer-events: none;
+}
+
+/* Hero entrance stagger */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-badge   { animation: hero-rise 0.65s ease both 0.15s; }
+.hero-title   { animation: hero-rise 0.75s ease both 0.32s; }
+.hero-sub     { animation: hero-rise 0.7s  ease both 0.52s; }
+.hero-actions { animation: hero-rise 0.65s ease both 0.68s; }
+.hero-trust   { animation: hero-rise 0.6s  ease both 0.84s; }
+
+/* Button press — tactile feedback */
+.btn:active {
+  transform: scale(0.96) translateY(0) !important;
+  transition-duration: 0.07s !important;
+}
+
+/* Button shine sweep on hover */
+.btn-gold,
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::after,
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.btn-gold:hover::after,
+.btn-primary:hover::after {
+  left: 140%;
+}
+
+/* Destination flag bounce on hover */
+.dest-flag {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+  will-change: transform;
+}
+.dest-card:hover .dest-flag { transform: scale(1.3) rotate(-7deg); }
+
+/* Step number pop when section scrolls in */
+@keyframes step-num-pop {
+  0%   { transform: scale(0);    opacity: 0; }
+  65%  { transform: scale(1.2);  opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+.step.visible .step-num {
+  animation: step-num-pop 0.55s cubic-bezier(.34,1.56,.64,1) both 0.28s;
+}
+
+/* Service card icon scale on hover */
+.svc-icon-wrap {
+  transition: background var(--transition), transform var(--transition);
+}
+.service-card:hover .svc-icon-wrap {
+  transform: scale(1.1) translateY(-3px);
+}
+
+/* Credential card gentle float */
+@keyframes card-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+.cred-id-card {
+  animation: card-float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* WhatsApp button glow pulse */
+@keyframes wa-glow {
+  0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,.2), 0 0 0 0 rgba(37,211,102,.3); }
+  55%       { box-shadow: 0 4px 18px rgba(37,211,102,.35), 0 0 0 9px rgba(37,211,102,0); }
+}
+.btn-whatsapp {
+  animation: wa-glow 2.8s ease-in-out infinite;
+}
+.btn-whatsapp:hover { animation: none; }
+
+/* Stat number flash on counter finish */
+@keyframes stat-done-flash {
+  0%   { color: #fff; transform: scale(1.08); }
+  100% { color: var(--gold); transform: scale(1); }
+}
+.stat.done .stat-num,
+.stat.done .stat-suf {
+  animation: stat-done-flash 0.45s ease both;
+}
+
+/* Employer card icon glow on hover */
+.emp-icon {
+  transition: transform var(--transition), filter var(--transition);
+}
+.emp-card:hover .emp-icon {
+  transform: scale(1.12) translateY(-2px);
+  filter: drop-shadow(0 2px 8px rgba(200,169,81,.4));
+}
+
+/* Contact icon subtle spin on hover */
+.contact-item:hover .c-icon {
+  transform: rotate(-8deg) scale(1.06);
+}
+.c-icon { transition: transform var(--transition); }
+
+/* Reduced-motion safety */
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge, .hero-title, .hero-sub, .hero-actions, .hero-trust {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .cred-id-card,
+  .btn-whatsapp { animation: none; }
+  .fade-up { transition: none; opacity: 1; transform: none; }
+  .scroll-progress { transition: none; }
+}
